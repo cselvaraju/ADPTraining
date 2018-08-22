@@ -23,7 +23,7 @@ public class Tester {
       System.out.println(service);
 
       // create one todo
-      Todo todo = new Todo("3", "Blabla");
+      Book todo = new Book("3", "Blabla");
       Response response = service.path("rest").path("todos").path(todo.getId()).request(MediaType.APPLICATION_XML).put(Entity.entity(todo,MediaType.APPLICATION_XML),Response.class);
 
       // Return code should be 201 == created resource

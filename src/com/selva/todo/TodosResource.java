@@ -31,8 +31,8 @@ public class TodosResource {
     // Return the list of todos to the user in the browser
     @GET
     @Produces(MediaType.TEXT_XML)
-    public List<Todo> getTodosBrowser() {
-        List<Todo> todos = new ArrayList<Todo>();
+    public List<Book> getTodosBrowser() {
+        List<Book> todos = new ArrayList<Book>();
         todos.addAll(TodoDao.instance.getModel().values());
         return todos;
     }
@@ -40,8 +40,8 @@ public class TodosResource {
     // Return the list of todos for applications
     @GET
     @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-    public List<Todo> getTodos() {
-        List<Todo> todos = new ArrayList<Todo>();
+    public List<Book> getTodos() {
+        List<Book> todos = new ArrayList<Book>();
         todos.addAll(TodoDao.instance.getModel().values());
         return todos;
     }
@@ -64,7 +64,7 @@ public class TodosResource {
             @FormParam("summary") String summary,
             @FormParam("description") String description,
             @Context HttpServletResponse servletResponse) throws IOException {
-        Todo todo = new Todo(id, summary);
+        Book todo = new Book(id, summary);
         if (description != null) {
             todo.setDescription(description);
         }

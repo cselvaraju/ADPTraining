@@ -3,15 +3,15 @@ package com.selva.todo;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Todo {
+public class Book {
     private String id;
     private String summary;
     private String description;
 
-    public Todo(){
+    public Book(){
 
     }
-    public Todo (String id, String summary){
+    public Book (String id, String summary){
         this.id = id;
         this.summary = summary;
     }
